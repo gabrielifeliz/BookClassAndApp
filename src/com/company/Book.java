@@ -1,22 +1,22 @@
 package com.company;
 
 public class Book {
-    private String title;
     private String author;
+    private String title;
     private String description;
     private String price;
-    private String isInStock;
+    private boolean isInStock;
 
     public Book() {
 
     }
 
-    public Book(String title, String author,
-                String description, String price, String isInStock) {
-        this.title = title;
+    public Book(String author, String title,
+                String description, double price, boolean isInStock) {
         this.author = author;
+        this.title = title;
         this.description = description;
-        this.price = price;
+        this.price = String.format("%.02f", price);
         this.isInStock = isInStock;
     }
 
@@ -48,20 +48,20 @@ public class Book {
         return price;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setPrice(double price) {
+        this.price = String.format("%.02f", price);
     }
 
-    public String getIsInStock() {
+    public boolean getIsInStock() {
         return isInStock;
     }
 
-    public void setIsInStock(String isInStock) {
+    public void setIsInStock(boolean isInStock) {
         this.isInStock = isInStock;
     }
 
     public String getDisplayText() {
-        return "Author: " + author + "\n\nTitle: " + title
+        return "Author:\n" + author + "\n\nTitle:\n" + title
                 + "\n\nDescription:\n" + description;
     }
 }
