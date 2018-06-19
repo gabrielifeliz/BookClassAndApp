@@ -15,19 +15,26 @@ public class BookApp {
                 52.50, true);
 
 
-        // Create BookDatabase object to search book in the "database"
-        BookDatabase bookDatabase = new BookDatabase();
-        bookDatabase.setBook("Zombie1005");
-        Book bookFromDatabase = bookDatabase.getBook();
-
-
         System.out.println(javaBook.getDisplayText() + "\n");
 
         // Add a method to the Book Class
         System.out.println(javaBook.getPricing(4) + "\n\n");
 
-        // Returned book from "database"
-        System.out.println(bookFromDatabase.getDisplayText() + "\n\n");
+
+        // Create BookDatabase object to search book in the "database"
+        BookDatabase bookDatabase = new BookDatabase();
+        bookDatabase.setBook("Zombie1005");
+        Book bookFromDatabase1 = bookDatabase.getBook();
+
+        // Returned book 1 from "database"
+        System.out.println(bookFromDatabase1.getDisplayText() + "\n\n");
+
+
+        bookDatabase = new BookDatabase("Java1001");
+        Book bookFromDatabase2 = bookDatabase.getBook();
+        // Returned book 2 from "database"
+        System.out.println(bookFromDatabase2.getDisplayText());
+
 
     }
 }

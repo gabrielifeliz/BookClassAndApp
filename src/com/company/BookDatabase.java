@@ -4,6 +4,13 @@ public class BookDatabase {
 
     private Book book;
 
+    public BookDatabase() {
+
+    }
+    public BookDatabase(String sku)  {
+        setBook(sku);
+    }
+
     public Book getBook() {
         return book;
     }
