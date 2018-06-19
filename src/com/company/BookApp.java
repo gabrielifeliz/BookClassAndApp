@@ -14,6 +14,10 @@ public class BookApp {
                 "\na popular IDE that will boost your productivity at every step.",
                 52.50, true);
 
-        System.out.println(book.getDisplayText());
+
+        System.out.println(book.getDisplayText() + "\n\n");
+
+        // Add a method to the Book Class
+        System.out.println(book.getPricing(4));
     }
 }

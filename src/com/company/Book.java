@@ -64,4 +64,14 @@ public class Book {
         return "Author:\n" + author + "\n\nTitle:\n" + title
                 + "\n\nDescription:\n" + description;
     }
+
+    public String getPricing(int quantity) {
+        if (isInStock) {
+            double total = Double.parseDouble(price) * quantity;
+            String totalPrice = String.format("%.02f", total);
+            return "The total price is $" + totalPrice;
+        } else {
+            return "The book is out of stock";
+        }
+    }
 }
