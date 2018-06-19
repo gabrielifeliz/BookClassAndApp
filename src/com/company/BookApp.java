@@ -4,7 +4,7 @@ public class BookApp {
 
     public static void main(String[] args) {
 
-        Book book = new Book("Joel Murach", "Murach’s Java Programming",
+        Book javaBook = new Book("Joel Murach", "Murach’s Java Programming",
                 "This is the 4th Edition of our best-selling core Java book." +
                 "\nSince 2001, it has been used by thousands of beginning" +
                 "\nand experienced programmers to master the core language" +
@@ -15,9 +15,19 @@ public class BookApp {
                 52.50, true);
 
 
-        System.out.println(book.getDisplayText() + "\n\n");
+        // Create BookDatabase object to search book in the "database"
+        BookDatabase bookDatabase = new BookDatabase();
+        bookDatabase.setBook("Zombie1005");
+        Book bookFromDatabase = bookDatabase.getBook();
+
+
+        System.out.println(javaBook.getDisplayText() + "\n");
 
         // Add a method to the Book Class
-        System.out.println(book.getPricing(4));
+        System.out.println(javaBook.getPricing(4) + "\n\n");
+
+        // Returned book from "database"
+        System.out.println(bookFromDatabase.getDisplayText() + "\n\n");
+
     }
 }

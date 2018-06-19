@@ -1,6 +1,8 @@
 package com.company;
 
 public class Book {
+
+    private String sku;
     private String author;
     private String title;
     private String description;
@@ -11,8 +13,19 @@ public class Book {
 
     }
 
+    // Book constructor for book database
+    public Book(String sku, String title,
+                String author, String description, double price) {
+
+        this.sku = sku;
+        this.author = author;
+        this.title = title;
+        this.description = description;
+        this.price = String.format("%.02f", price);
+    }
+
     public Book(String author, String title,
-                String description, double price, boolean isInStock) {
+                 String description, double price, boolean isInStock) {
         this.author = author;
         this.title = title;
         this.description = description;
@@ -58,6 +71,14 @@ public class Book {
 
     public void setIsInStock(boolean isInStock) {
         this.isInStock = isInStock;
+    }
+
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
     }
 
     public String getDisplayText() {
